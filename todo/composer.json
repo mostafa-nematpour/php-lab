@@ -1,0 +1,16 @@
+{
+    "name": "mostafa/todo",
+    "description": "simpel todo list Project (With Ajax, php, my SQL)",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mostafa-nematpour",
+            "email": "nematpor46@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hekmatinasser/verta": "^1.11"
+    }
+}
