@@ -1,0 +1,17 @@
+{
+    "name": "mostafa-nematpour/5.api",
+    "require": {
+        "firebase/php-jwt": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MostafaNematpour\\5Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mostafa",
+            "email": "nematpor46@gmail.com"
+        }
+    ]
+}

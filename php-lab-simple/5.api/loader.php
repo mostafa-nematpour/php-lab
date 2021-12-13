@@ -1,4 +1,16 @@
 <?php
+# cache constans
+define('CACHE_ENABLED',0);
+define('CACHE_DIR',__DIR__.'/cache/');
+
+# authorization  Constants
+define('JWT_ALG','HS256');
+define('JWT_KEY','mostafachemidona8*8');
+
+
+
+
+include_once 'vendor/autoload.php';
 include_once 'App/iran.php';
 
 spl_autoload_register(function ($class) {
