@@ -7,20 +7,35 @@ use \App\Utilities\CacheUtility;
 
 
 # check Authorization (use ajwt token)
+# header schema>>> Authorization: Bearer <token> 
+
+$token = getBearerToken();
+$user = isValidToken($token);
+if (!$user) {
+    Response::respondAndDie(['error' => 'Invalid Token'], Response::HTTP_UNAUTHORIZED);
+}
+# Authorization ok
+
 # get request token and validate it
 
 $request_method = $_SERVER['REQUEST_METHOD'];
 $request_body = json_decode(file_get_contents('php://input'), true);
 $city_service = new CityService();
 
+
+
+
+
 // Response::respondAndDie($request_body);
 switch ($request_method) {
 
     case 'GET':
-   
+        $province_id = $_GET['province_id'] ?? null;
+        if (!hasAccessToProvince($user, $province_id)) {
+            Response::respondAndDie(['error' => 'you have no access to this province'], Response::HTTP_FORBIDDEN);
+        }
         CacheUtility::start();
 
-        $province_id = $_GET['province_id'] ?? null;
 
 
         # do validate : province_id
